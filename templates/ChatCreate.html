@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>ChatCreate</title>
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    {% for item in object_list %}
+    <div class="item">
+        <p>{{ item.userName }}：{{ item.chat }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="container">
+    <form action="" method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="送信">
+    </form>
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
