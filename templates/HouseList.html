@@ -1,13 +1,17 @@
 {% extends 'base.html'%}
 
 {% block title %}
-<title>TOP</title>
+<title>HouseList</title>
 {% endblock title %}
 
 {% block header %}
 {% endblock header %}
 
 {% block content %}
+
+<div class="container">
+    <p><a href="{% url 'housedetail' %}">この物件の詳細</a></p>
+</div>
 {% endblock content %}
 
 {% block footer %}

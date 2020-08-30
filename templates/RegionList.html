@@ -14,7 +14,7 @@
 <div class="container">
     {% for item in object_list %}
     <div class="item">
-        <p><a href="{% url 'detail' item.pk %}">{{ item.region }}</a></p>
+        <p><a href="{% url 'regiondetail' item.pk %}">{{ item.region }}</a></p>
     </div>
     {% endfor %}
 </div>

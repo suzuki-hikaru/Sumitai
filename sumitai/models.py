@@ -30,7 +30,9 @@ class ChatModel(models.Model) :
         max_length=100,
         null=True,  #仮
     )
-    chat = models.TextField()
+    chat = models.TextField(
+        null=True,
+    )
     def __str__(self):
         return self.chat
 

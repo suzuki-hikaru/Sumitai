@@ -16,10 +16,14 @@
     <p>{{ object.housetype }}</p>
     <p>{{ object.memo }}</p>
 </div>
+
+<div class="container">
+    <p><a href="{% url 'houselist' %}">この物件にする</a></p>
+</div>
 {% endblock content %}
 
 {% block footer %}
 <div class="container">
-    <p><a href="{% url 'list' %}">おすすめの地域に戻る</a></p>
+    <p><a href="{% url 'regionlist' %}">おすすめの地域に戻る</a></p>
 </div>
 {% endblock footer %}
