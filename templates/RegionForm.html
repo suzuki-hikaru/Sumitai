@@ -9,6 +9,39 @@
 
 {% block content %}
 <div class="container">
+    <form method="post" action="example.cgi">
+
+        <label>きれい</label>
+        <p>
+            <input type="radio" name="k1" value="1"> 1
+            <input type="radio" name="k2" value="2"> 2
+            <input type="radio" name="k3" value="3"> 3
+            <input type="radio" name="k4" value="4"> 4
+            <input type="radio" name="k5" value="5"> 5
+        </p>
+
+        <label>ネット環境</label>
+        <p><input type="radio" name="n1" value="1"> 1
+            <input type="radio" name="n2" value="2"> 2
+            <input type="radio" name="n3" value="3"> 3
+            <input type="radio" name="n4" value="4"> 4
+            <input type="radio" name="n5" value="5"> 5
+        </p>
+
+        <label>家賃</label>
+        <p><input type="radio" name="y1" value="1"> 1
+            <input type="radio" name="y2" value="2"> 2
+            <input type="radio" name="y3" value="3"> 3
+            <input type="radio" name="y4" value="4"> 4
+            <input type="radio" name="y5" value="5"> 5
+        </p>
+
+
+        <p><input type="submit" value="送信する"></p>
+
+    </form>
+</div>
+<div class="container">
     <p><a href="{% url 'regionlist' %}">検索</a></p>
 </div>
 {% endblock content %}

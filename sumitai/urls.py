@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Top, RegionForm, RegionList, RegionDetail, HouseList, HouseDetail, ChatCreate, Login, Request, ContractPhone, ContractView
+from .views import Top, RegionForm, RegionList, RegionDetail, HouseList, HouseDetail, ChatCreate, Signup, Login, Request, ContractPhone, ContractView
 
 
 urlpatterns = [
@@ -10,7 +10,8 @@ urlpatterns = [
     path('HouseList/', HouseList.as_view(), name='houselist'),
     path('HouseDetail/', HouseDetail.as_view(), name='housedetail'),
     path('ChatCreate/',ChatCreate.as_view(), name='chatcreate'),
-    path('Login/',Login.as_view(), name='login'),
+    path('Signup/',Signup, name='signup'),
+    path('Login/',Login, name='login'),
     path('Request/',Request.as_view(), name='request'),
     path('ContractPhone/',ContractPhone.as_view(), name='contractphone'),
     path('ContractView/',ContractView.as_view(), name='contractview'),

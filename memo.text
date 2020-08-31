@@ -1,6 +1,9 @@
 //枠組み
 {% extends 'base.html'%}
 
+{% block customcss %}
+{% endblock customcss %}
+
 {% block title %}
 <title>TOP</title>
 {% endblock title %}

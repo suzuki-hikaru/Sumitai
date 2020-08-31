@@ -11,7 +11,7 @@
 <form class="form-signin" method='POST' action=''>{% csrf_token %}
     <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
 
-    <h1 class="h3 mb-3 font-weight-normal">ログインしてください</h1>
+    <h1 class="h3 mb-3 font-weight-normal">サインアップしてください</h1>
 
     {% if error %}
     <!--エラーが存在する場合-->
@@ -29,7 +29,6 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">サインイン</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
-    <p><a href="{% url 'login' %}">既に登録済みの方はこちら</a></p>
 </form>
 
 

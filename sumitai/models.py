@@ -16,12 +16,16 @@ class SumitaiModel(models.Model):
         null=True,  #仮
     )
     memo = models.TextField()
-
     houseType = models.CharField(
         max_length=100,
         choices=HTYPE,
         null=True, #仮
         )
+    images = models.ImageField(
+        upload_to='',
+        null=True, #仮
+        )
+
     def __str__(self):
         return self.houseName
 
