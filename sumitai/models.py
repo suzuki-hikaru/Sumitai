@@ -25,6 +25,16 @@ class SumitaiModel(models.Model):
         upload_to='',
         null=True, #仮
         )
+    good = models.IntegerField(
+        null=True, #仮
+        )
+    read = models.IntegerField(
+        null=True, #仮
+    )
+    readtext = models.CharField(
+        max_length=200,
+        null=True, #仮
+    )
 
     def __str__(self):
         return self.houseName

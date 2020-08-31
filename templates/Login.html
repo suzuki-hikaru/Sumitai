@@ -1,4 +1,9 @@
 {% extends 'base.html'%}
+{% load static %}
+
+{% block customcss %}
+<link rel='stylesheet' type='text/css' href="{% static 'style.css' %}">
+{% endblock customcss %}
 
 {% block title %}
 <title>Login</title>
@@ -34,7 +39,6 @@
 
 
 <div class="container">
-    {{some}}
     <p><a href="{% url 'chatcreate' %}">チャットページ</a></p>
 </div>
 {% endblock content %}

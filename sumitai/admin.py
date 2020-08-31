@@ -3,4 +3,4 @@ from .models import SumitaiModel,ChatModel
 # Register your models here.
 
 admin.site.register(SumitaiModel),
-admin.site.register(ChatModel)
+admin.site.register(ChatModel),
