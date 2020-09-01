@@ -24,3 +24,10 @@
 
 //エラー：That port is already in use.
 kill `lsof -ti tcp:8000`
+
+
+//いいね
+    <p>
+        <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button"
+            aria-pressed="true">いいね：{{item.good}}</a>
+    </p>
