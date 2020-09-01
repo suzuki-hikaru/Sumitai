@@ -135,3 +135,8 @@ class ContractView(ListView):
 def Logout(request):
     logout(request)
     return redirect('top')
+
+def Good(request):
+    object_list = SumitaiModel.objects.all
+    good = object_list.good
+    return render()
