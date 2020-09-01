@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block title %}
 <title>HouseDetail</title>
@@ -8,6 +9,11 @@
 {% endblock header %}
 
 {% block content %}
+<div class="container">
+    <h2>{{object.houseName}}</h2>
+    <p><img src='{{object.images.url}}'></p>
+</div>
+
 <div class="container">
     <p><a href="{% url 'signup' %}">決定</a></p>
 </div>

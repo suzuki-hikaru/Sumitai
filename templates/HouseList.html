@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block title %}
 <title>HouseList</title>
@@ -8,10 +9,25 @@
 {% endblock header %}
 
 {% block content %}
-
 <div class="container">
-    <p><a href="{% url 'housedetail' %}">この物件の詳細</a></p>
+    {% for item in object_list %}
+    <p>
+        物件名:{{item.houseName}}
+    </p>
+    <p>
+        ハウスタイプ:{{item.houseType}}
+    </p>
+    <p>
+        <a href="{% url 'housedetail' item.pk%}">この物件の詳細</a>
+    </p>
+    {% if item.images %}
+    <p>
+        <img src="{{item.images.url}}">
+    </p>
+    {% endif %}
+    {% endfor %}
 </div>
+
 {% endblock content %}
 
 {% block footer %}

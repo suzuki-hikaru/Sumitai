@@ -1,4 +1,9 @@
 {% extends 'base.html'%}
+{% load static %}
+
+{% block customcss %}
+<link rel='stylesheet' type='text/css' href="{% static 'style.css' %}">
+{% endblock customcss %}
 
 {% block title %}
 <title>Top</title>
@@ -8,9 +13,9 @@
 {% endblock header %}
 
 {% block content %}
-
-
 <div class="container">
+    <p><img src="{% static 'images/area1.jpg' %}"></p>
+
     <p><a href="{% url 'regionform' %}">居住地域を探す</a></p>
 </div>
 {% endblock content %}

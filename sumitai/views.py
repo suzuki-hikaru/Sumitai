@@ -23,13 +23,13 @@ class RegionDetail(DetailView):
     template_name = 'RegionDetail.html'
     model = SumitaiModel
 
-class HouseList(ListView):
-    template_name = 'HouseList.html'
-    model = SumitaiModel
+def HouseList(request):
+    object_list = SumitaiModel.objects.all()
+    return render(request, 'HouseList.html', {'object_list':object_list})
 
-class HouseDetail(ListView):
-    template_name = 'HouseDetail.html'
-    model = SumitaiModel
+def HouseDetail(request, pk):
+    object = SumitaiModel.objects.get(pk=pk)
+    return render(request, 'HouseDetail.html', {'object':object})
 
 class Request(ListView):
     template_name = 'Request.html'
@@ -136,7 +136,8 @@ def Logout(request):
     logout(request)
     return redirect('top')
 
-def Good(request):
-    object_list = SumitaiModel.objects.all
-    good = object_list.good
-    return render()
+def Good(request, pk):
+    object_list = SumitaiModel.objects.get(pk=pk)
+    object_list.good = object_list.good +1
+    post.save()
+    return redirect('houselist')
