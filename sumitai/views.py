@@ -41,7 +41,7 @@ def Login(request):
         postUsername = request.POST['username']
         postMail = request.POST['mail']
         postPassword = request.POST['password']
-        user = authenticate(request, username=postUsername, password=postPassword)
+        user = authenticate(request, username=postUsername, mail=postMail, password=postPassword)
 
         if user is not None:
             login(request, user)
@@ -74,6 +74,20 @@ def Signup(request):
     else:
         print("これはGETメソッドです")
     return render(request, 'Signup.html', {'some':100})
+
+def RegionForm1(request):
+    if request.method =='POST':
+        postForm1 = request.POST['form1']
+        object_list = SumitaiModel.objects.all
+        houseName = object_list.houseName
+        try:
+            object_form = SumitaiModel.objects.get(houseName=postForm1)
+            return render(request, 'RegionList.html', {'object_form':object_form})
+        except:
+            return render(request, 'RegionForm.html', {'error':'検索結果に一致する地域はありません'})
+    else:
+        return render(request, 'RegionForm.html')
+
 
 def Login(request):
     if request.method == 'POST':
