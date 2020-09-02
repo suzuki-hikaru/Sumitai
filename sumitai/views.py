@@ -151,7 +151,7 @@ def Logout(request):
     return redirect('top')
 
 def Good(request, pk):
-    object_list = SumitaiModel.objects.get(pk=pk)
-    object_list.good = object_list.good +1
-    post.save()
+    object = SumitaiModel.objects.get(pk=pk)
+    object.good = object.good +1
+    object.save()
     return redirect('houselist')

@@ -20,10 +20,15 @@
     <p>
         <a href="{% url 'housedetail' item.pk%}">この物件の詳細</a>
     </p>
+    <p>
+        <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button"
+            aria-pressed="true">いいね：{{item.good}}</a>
+    </p>
     {% if item.images %}
     <p>
         <img src="{{item.images.url}}">
     </p>
+
     {% endif %}
     {% endfor %}
 </div>

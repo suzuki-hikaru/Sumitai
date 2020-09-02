@@ -17,6 +17,11 @@
 {% endblock header %}
 
 {% block content %}
+
+    {% if item.images %}
+    <img src="{{item.images.url}}">
+    {% endif %}
+
 {% endblock content %}
 
 {% block footer %}

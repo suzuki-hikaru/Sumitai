@@ -26,7 +26,7 @@ class SumitaiModel(models.Model):
         null=True, #仮
         )
     good = models.IntegerField(
-        null=True, #仮
+        default=0
         )
     read = models.IntegerField(
         null=True, #仮

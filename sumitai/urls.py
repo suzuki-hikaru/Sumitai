@@ -16,5 +16,5 @@ urlpatterns = [
     path('ContractPhone/', ContractPhone.as_view(), name='contractphone'),
     path('ContractView/', ContractView.as_view(), name='contractview'),
     path('Logout/', Logout, name='logout'),
-    path('Good/', Good, name="good"),
+    path('Good/<int:pk>', Good, name="good"),
 ]
