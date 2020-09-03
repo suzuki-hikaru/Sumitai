@@ -1,6 +1,10 @@
 {% extends 'base.html'%}
 {% load static %}
 
+{% block customcss %}
+<link rel='stylesheet' type='text/css' href="{% static 'style.css' %}">
+{% endblock customcss %}
+
 {% block title %}
 <title>HouseList</title>
 {% endblock title %}
@@ -23,6 +27,9 @@
     <p>
         <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button"
             aria-pressed="true">いいね：{{item.good}}</a>
+        <a href="{% url 'read' item.pk %}" class="btn btn-danger" role="button"
+            aria-pressed="true">既読：{{item.read}},既読者：{{item.readtext}}</a>
+
     </p>
     {% if item.images %}
     <p>

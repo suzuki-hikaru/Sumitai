@@ -18,6 +18,8 @@
 
     <a href="{% url 'good' object.pk %}" class="btn btn-primary" role="button"
         aria-pressed="true">いいね：{{object.good}}</a>
+    <a href="{% url 'read' object.pk %}" class="btn btn-danger" role="button" aria-pressed="true">既読：{{object.read}}</a>
+
 </div>
 
 <div class="container">

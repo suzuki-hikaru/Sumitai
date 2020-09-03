@@ -29,12 +29,9 @@ class SumitaiModel(models.Model):
         default=0
         )
     read = models.IntegerField(
-        null=True, #仮
+        default=0
     )
-    readtext = models.CharField(
-        max_length=200,
-        null=True, #仮
-    )
+    readtext = models.CharField(max_length=100, null=True, blank=True, default='a')
 
     def __str__(self):
         return self.houseName
