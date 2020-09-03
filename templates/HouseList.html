@@ -27,8 +27,7 @@
     <p>
         <a href="{% url 'good' item.pk %}" class="btn btn-primary" role="button"
             aria-pressed="true">いいね：{{item.good}}</a>
-        <a href="{% url 'read' item.pk %}" class="btn btn-danger" role="button"
-            aria-pressed="true">既読：{{item.read}},既読者：{{item.readtext}}</a>
+        <a href="{% url 'read' item.pk %}" class="btn btn-danger" role="button" aria-pressed="true">既読：{{item.read}}</a>
 
     </p>
     {% if item.images %}

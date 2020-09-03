@@ -160,6 +160,7 @@ def Read(request, pk):
     post = SumitaiModel.objects.get(pk=pk)
     post2 = request.user.get_username()
     if post2 in str(post.readtext):
+        
         return redirect('houselist')
     else:
         post.read += 1
