@@ -35,7 +35,7 @@ class SumitaiModel(models.Model):
         max_length=100, null=True, blank=True, default='a'
         )
     pushuser = models.CharField(
-        max_length=100, null=True, blank=True, default='b'
+        max_length=100, null=True, blank=True, default= 'F'
     )
 
 

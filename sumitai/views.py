@@ -160,14 +160,21 @@ def Read(request, pk):
     post = SumitaiModel.objects.get(pk=pk)
     loginname = request.user.get_username()
     if loginname in str(post.readtext):
-        if post.pushuser == 1:
-            post.pushuser = 0
+        if post.pushuser == 'F': #ここをTにしたら既読のオンオフ可能、ただしユーザごとの情報が反映不能
+            post.pushuser = 'F'
             post.read -= 1
             post.save()
+            return redirect('houselist')
+        else:
+            post.pushuser = 'T'
+            post.read += 1
+            post.save()
+            return redirect('houselist')
+
         return redirect('houselist')
     else:
+        post.pushuser = 'T'
         post.read += 1
-        post.pushuser = 1
-        post.readtext = str(post.readtext) + ' ' + str(post2)
+        post.readtext = str(post.readtext) + ' ' + str(loginname)
         post.save()
         return redirect('houselist')
