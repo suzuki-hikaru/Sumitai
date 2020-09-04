@@ -158,9 +158,10 @@ def Good(request, pk):
 
 def Read(request, pk):
     post = SumitaiModel.objects.get(pk=pk)
-    post2 = request.user.get_username()
-    if post2 in str(post.readtext):
-        
+    loginname = request.user.get_username()
+    if loginname in str(post.readtext):
+        post.read -= 1
+        post.save()
         return redirect('houselist')
     else:
         post.read += 1

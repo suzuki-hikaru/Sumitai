@@ -30,8 +30,14 @@ class SumitaiModel(models.Model):
         )
     read = models.IntegerField(
         default=0
+        )
+    readtext = models.CharField(
+        max_length=100, null=True, blank=True, default='a'
+        )
+    pushuser = models.CharField(
+        max_length=100, null=True, blank=True, default='b'
     )
-    readtext = models.CharField(max_length=100, null=True, blank=True, default='a')
+
 
     def __str__(self):
         return self.houseName
