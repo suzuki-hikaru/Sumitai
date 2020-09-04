@@ -160,11 +160,14 @@ def Read(request, pk):
     post = SumitaiModel.objects.get(pk=pk)
     loginname = request.user.get_username()
     if loginname in str(post.readtext):
-        post.read -= 1
-        post.save()
+        if post.pushuser == 1:
+            post.pushuser = 0
+            post.read -= 1
+            post.save()
         return redirect('houselist')
     else:
         post.read += 1
+        post.pushuser = 1
         post.readtext = str(post.readtext) + ' ' + str(post2)
         post.save()
         return redirect('houselist')
