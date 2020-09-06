@@ -25,6 +25,10 @@ class SumitaiModel(models.Model):
         upload_to='',
         null=True, #仮
         )
+    images2 = models.ImageField(
+        upload_to='',
+        null=True, #仮
+        )
     good = models.IntegerField(
         default=0
         )

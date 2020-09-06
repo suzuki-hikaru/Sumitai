@@ -108,10 +108,10 @@ def Login(request):
     return render(request, 'Login.html')
 
 def Signup(request):
-    # user2 = User.objects.all()
-    # user2 = User.objects.get(username='hikaru')
-    # print(user2)
-    # print(user2.email)
+    user2 = User.objects.all()
+    user2 = User.objects.get(username='hikaru')
+    print(user2)
+    print(user2.email)
 
     if request.method == 'POST':
         print("これはPOSTメソッドです")
